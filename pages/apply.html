@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>Interastral Peace Corporation Application Form</title>
+
+        <link rel="stylesheet" href="../styles/ipc_style.css">   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
+        
+        <script type = "text/javascript" src="../js/main_page.js"></script>
+    </head>
+    <body style="background-color:rgb(15, 0, 53)">
+
+        <div class="topnav" id="myTopnav">
+            <a href="../index.html" class="active">
+                <div id="HomeImg">
+                    Home 
+                </div>
+            </a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="apply.html">Apply</a>
+            <a href="javascript:void(0);" class="icon" onclick="expandNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        
+       
+        <div id="bannerimage" style="height:50%;">
+            <p class='bannertxt'>Apply</p>
+        </div>  
+
+        <div class="headers" style="padding-top: 3%; padding-bottom: 3%; margin-left: 20%; margin-right: 20%;">
+            <h2>Application Form</h2>
+            <form action="#">
+                <label for="first">First Name:</label>
+                <input type="text" id="first" name="first" required />
+                <br>
+
+                <label for="last">Last Name:</label>
+                <input type="text" id="last" name="last" required />
+                <br>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">
+                        Male
+                    </option>
+                    <option value="female">
+                        Female
+                    </option>
+                    <option value="other">
+                        Other
+                    </option>
+                </select>
+                <br>
+
+                <label for="planet">Planet of Origin:</label>
+                <input type="text" id="planet" name="planet" required />
+                <br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+                <br>
+
+                <label for="mobile">Contact:</label>
+                <input type="text" id="mobile" name="mobile" maxlength="10" required />
+                <br>
+
+                <label for="department">Department of Interest:</label>
+                <select id="department" name="department" required>
+                    <option value="strat">
+                        Strategic Investiment
+                    </option>
+                    <option value="consol">
+                        Business Consolidation
+                    </option>
+                    <option value="market">
+                        Marketing Development
+                    </option>
+                </select>
+                <br>
+
+                <label for="resume">Upload Resume Here:</label>
+                <input type="file" id="resume" name="resume" required />
+                <br>
+
+                <label for="question">Why do you want to work for the IPC? (350 characters max):</label>
+                <br>
+                <textarea id="question" name="question" maxlength="350" style="height:250px; width:350px;" required></textarea>
+                <br>
+                <br>
+
+                <button type="submit" class="submit_btn">
+                    Submit
+                </button>
+                <br>
+                <br>
+            </form>
+
+            <p>We will notify you within a few days the status of your application.</p>
+
+            <a class="main_link" href="https://youtu.be/2f2qB_gw8b8?si=HzjoEkzplgOGLrGf">
+                We wish you the best of luck!</a>
+        </div>
+
+
+        <div class="footer">
+            <p class="headers">Having trouble with your application? Pray to the Amber Lord, Qlipoth!</p>
+        </div>
+
+
+    </body>
+</html>
