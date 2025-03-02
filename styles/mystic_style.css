@@ -1,5 +1,5 @@
 #bannerimage {
-    background-image: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url('../sources/Qlipoth.png'); /* Replace with your image path */ 
+    background-image: black;
     background-size: cover; /* Cover the entire header */ 
     background-position: center 10%; /* Center the image */ 
     height: 70%; /* Set a height for the header */ 
@@ -11,11 +11,10 @@
     overflow: hidden;
 }
 
-
 .bannertxt{
     color: #9D5143; /* Text color */ 
     
-    font-family: "Oswald", serif;
+    font-family: "Sour Gummy", serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
@@ -27,50 +26,14 @@
 }
 
 
-#HomeImg {
-    background-image: url('../sources/IPC_logo.png'); /* Replace with your image path */ 
-    background-size: cover; /* Cover the entire header */ 
-    background-position: center; /* Center the image */  
-    
-    min-height:30px;    /* Set a height for the header */ 
-    min-width:30px; 
 
-    font-size: 100%;
-    display: flex; /* Align items */ 
-    justify-content: center; /* Center horizontally */ 
-    align-items: center; /* Center vertically */ 
-    text-align: center; /* Center text */ 
-    overflow: hidden;
-}
-
-/* .navcontainer {
-    position: fixed;
-    width: 100%;
-    border-bottom: 60px solid red;
-    padding-bottom: 5px;
-    top: 0;
-} */
-
-
-.applyBlock {
-    background-color: #F9EACF; 
-    width: 80%;
-    height: 20vmin;
-    margin-top: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-top: 10px;
-
-    display:flex;
-    justify-content: center; 
-}
 
 
 
 .headers {
     text-align: center;
-    color:azure;
-    font-family: "Oswald", serif;
+    color: red;
+    font-family: "Sour Gummy", serif;
 }
 
 .main_link {
@@ -85,30 +48,18 @@
 
 
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 5.0vmin;
-    font-size: 3.2vmin;
-    background-color: red;
-    color: white;
-    text-align: center;
-}
-
 
 
 
 .btn {
-    border: 1vmin solid black;
+    border: 3px solid black;
     background-color: #e0a53f;
     color: black;
     padding: 10px 20px;
-    font-size: 7.0vmin;
+    font-size: 20px;
     cursor: pointer;
 
-    font-family: "Oswald", serif;
+    font-family: "Sour Gummy", serif;
 }
 .success {
     border-color: #9D5143;
@@ -122,11 +73,11 @@
 
 .submit_btn {
     color: #9D5143;
-    border: 1vmin solid #9D5143;
+    border: 3px solid #9D5143;
     background-color: #e0a53f;
     padding: 5px 15px;
-    font-size: 7.0vmin;
-    font-family: "Oswald", serif;
+    font-size: 20px;
+    font-family: "Sour Gummy", serif;
 }
 .submit_btn:hover {
     background-color: #9D5143;
@@ -136,6 +87,8 @@
 
 
 
+
+/*---------------------- NAV STUFF ---------------------*/
 
 /* I don't want anything to start w. whitespace around it. This gets
 overriden later */
@@ -164,7 +117,7 @@ overriden later */
     text-decoration: none;
     font-size: 17px;
 
-    font-family: "Oswald", serif;
+    font-family: "Sour Gummy", serif;
     font-weight: 500;
     min-height:30px;    
     min-width:30px; 

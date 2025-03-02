@@ -1,0 +1,101 @@
+<html>
+    <head>
+
+        <style>
+
+            .headers {
+                text-align: center;
+                color:azure;
+                font-family: "Oswald", serif;
+            }
+
+            /* Create three equal columns that floats next to each other */
+            .column {
+                float: left;
+                width: 33.33%;
+                padding: 5.0vmin;
+                box-sizing: border-box;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+                box-sizing: border-box;
+            }
+
+            /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+                .column {
+                    width: 100%;
+                }
+            }
+        
+        </style>
+
+
+        <title>Mystic Managerie Food and Care</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="../styles/mystic_style.css">   
+        <script type = "text/javascript" src="../js/main_page.js"></script>
+    </head>
+    <body style="background-color: #bbede5;">
+        <div class="topnav" id="myTopnav">
+            <a href="../index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="creatures.html">Creatures</a>
+            <a href="food.html">Food & Care</a>
+            <a href="adopt.html">Adopt</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact Us</a>
+            
+            <a href="javascript:void(0);" class="icon" onclick="expandNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div id="bannerimage" style="height:50%;">
+            <p class='bannertxt'>Food and Care</p>
+        </div>        
+
+
+        <div class="row">
+            <div class="column">
+                <img src="" width=100%> </img>
+                <h2 class="headers">Food 1</h2>
+                <ul class="headers">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+            </div>
+            <div class="column">
+                <img src="" width=100%> </img>
+                <h2 class="headers">Food 2</h2>
+                <ul class="headers">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="column">
+                <img src="" width=100%> </img>
+                <h2 class="headers">Food 3</h2>
+                <ul class="headers">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        
+    </body>
+</html>
