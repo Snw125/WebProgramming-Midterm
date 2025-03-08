@@ -20,9 +20,11 @@
                 if (expSelect.value === 'no') {
                     expQuestionLabel.style.display = 'block';  
                     expQuestionTextarea.style.display = 'block'; 
+                    expQuestionTextarea.setAttribute('required', 'required'); 
                 } else {
-                    expQuestionLabel.style.display = 'none';  
-                    expQuestionTextarea.style.display = 'none';  
+                    expQuestionLabel.style.display = 'none';
+                    expQuestionTextarea.style.display = 'none';
+                    expQuestionTextarea.removeAttribute('required'); 
                 }
             }
 
@@ -117,8 +119,8 @@
                 <br>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-                <div id="error-message">Please enter your email address.</div>
+                <input type="email" id="email" name="email" />
+                <div id="error-message">ERROR: Please enter your email address.</div>
                 <br>
             
                 <label for="mobile">Phone Number:</label>
@@ -137,7 +139,7 @@
                 <br>
 
                 <label for="exp_question" id="exp_question_label">Please tell us about your previous pet owning experience:</label>
-                <textarea id="exp_question" name="exp_question" maxlength="350" style="height:150px; width:350px;" required></textarea>
+                <textarea id="exp_question" name="exp_question" maxlength="350" style="height:150px; width:350px;" ></textarea>
 
                 <label for="eq_question">Please tell us about personality traits you have that
                     would make you a good pet owner:</label>
