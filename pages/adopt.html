@@ -80,10 +80,31 @@
                 <input type="text" id="mobile" name="mobile" maxlength="10" required />
                 <br>
 
-                <label for="question">Please tell us why you would be a good pet 
-                    owner and any previous experience you may have:</label>
+                <label for="exp">Are you a first time pet owner?</label>
+                <select id="exp" name="exp" required>
+                    <option value="yes">
+                        Yes
+                    </option>
+                    <option value="no">
+                        No
+                    </option>
+                </select>
                 <br>
-                <textarea id="question" name="question" maxlength="350" style="height:250px; width:350px;" required></textarea>
+
+                <label for="exp_question">Please tell us about your previous pet owning experience:</label>
+                <br>
+                <textarea id="exp_question" name="exp_question" maxlength="350" style="height:150px; width:350px;" required></textarea>
+                <br>
+
+                <label for="eq_question">Please tell us about personality traits you have that
+                    would make you a good pet owner:</label>
+                <br>
+                <textarea id="eq_question" name="eq_question" maxlength="350" style="height:150px; width:350px;" required></textarea>
+                <br>
+
+                <label for="why_question">Please tell us why you want to adopt from Mystic Menagerie:</label>
+                <br>
+                <textarea id="why_question" name="why_question" maxlength="350" style="height:150px; width:350px;" required></textarea>
                 <br>
                 <br>
 
