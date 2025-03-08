@@ -10,7 +10,51 @@
         
         <link rel="stylesheet" href="../styles/mystic_style.css">   
         <script type = "text/javascript" src="../js/main_page.js"></script>
+        <script type="text/javascript">
+            // toggle visibility of the question about previous pet owning experience
+            function toggleExperienceQuestion() {
+                var expSelect = document.getElementById('exp');
+                var expQuestionLabel = document.getElementById('exp_question_label');
+                var expQuestionTextarea = document.getElementById('exp_question');
+                
+                if (expSelect.value === 'no') {
+                    expQuestionLabel.style.display = 'block';  
+                    expQuestionTextarea.style.display = 'block'; 
+                } else {
+                    expQuestionLabel.style.display = 'none';  
+                    expQuestionTextarea.style.display = 'none';  
+                }
+            }
+
+            function validateEmail() {
+                var email = document.getElementById('email').value;
+                var errorMessage = document.getElementById('error-message');
+                if (email === "") {
+                    errorMessage.style.display = 'block'; 
+                    return false;  
+                } else {
+                    errorMessage.style.display = 'none'; 
+                    return true;  
+                }
+            }
+            
+            window.onload = function() {
+                toggleExperienceQuestion();  
+                document.getElementById('exp').addEventListener('change', toggleExperienceQuestion);  
+                document.getElementById('error-message').style.display = 'none';
+            }
+        </script>
+
+        <style>
+            textarea {
+                width: 100%;
+                max-width: 350px; 
+                margin: 0 auto;
+                display: block;
+            }
+        </style>
     </head>
+
     <body style="background-color: #bbede5;">
         <div class="topnav" id="myTopnav">
             <a href="../index.html" class="active">Home</a>
@@ -35,7 +79,7 @@
 
         <div class="headers" style="padding-top: 3%; padding-bottom: 3%; margin-left: 20%; margin-right: 20%;">
             <h2>Application Form</h2>
-            <form action="#">
+            <form action="#" onsubmit="return validateEmail()">
                 <label for="first">First Name:</label>
                 <input type="text" id="first" name="first" required />
                 <br>
@@ -74,8 +118,9 @@
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required />
+                <div id="error-message">Please enter your email address.</div>
                 <br>
-
+            
                 <label for="mobile">Phone Number:</label>
                 <input type="text" id="mobile" name="mobile" maxlength="10" required />
                 <br>
@@ -91,21 +136,15 @@
                 </select>
                 <br>
 
-                <label for="exp_question">Please tell us about your previous pet owning experience:</label>
-                <br>
+                <label for="exp_question" id="exp_question_label">Please tell us about your previous pet owning experience:</label>
                 <textarea id="exp_question" name="exp_question" maxlength="350" style="height:150px; width:350px;" required></textarea>
-                <br>
 
                 <label for="eq_question">Please tell us about personality traits you have that
                     would make you a good pet owner:</label>
-                <br>
                 <textarea id="eq_question" name="eq_question" maxlength="350" style="height:150px; width:350px;" required></textarea>
-                <br>
 
                 <label for="why_question">Please tell us why you want to adopt from Mystic Menagerie:</label>
-                <br>
                 <textarea id="why_question" name="why_question" maxlength="350" style="height:150px; width:350px;" required></textarea>
-                <br>
                 <br>
 
                 <button type="submit" class="submit_btn">
