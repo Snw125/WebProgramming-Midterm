@@ -12,7 +12,7 @@
 }
 
 .bannertxt{
-    color: #9D5143; /* Text color */ 
+    color: #0c4784; /* Text color */ 
     
     font-family: "Sour Gummy", serif;
     font-optical-sizing: auto;
@@ -50,18 +50,15 @@
 
 .headers {
     text-align: center;
-    color: red;
+    color: #0c4784;
     font-family: "Sour Gummy", serif;
 }
 
 .main_link {
-    color:crimson;
+    color: #dc143c;
 }
 .main_link:hover {
-    color:#e0a53f;
-}
-.apply_link:hover {
-    color: rgb(15, 0, 53);
+    color: #ffb25b;
 }
 
 
@@ -90,15 +87,17 @@
 
 
 .submit_btn {
-    color: #9D5143;
-    border: 3px solid #9D5143;
-    background-color: #e0a53f;
+    color: #1c8390;
+    border: 3px solid #1c8390;
+    background-color: #5ad9b9;
     padding: 5px 15px;
     font-size: 20px;
     font-family: "Sour Gummy", serif;
+    border-radius: 5px;
+    text-decoration: none;
 }
 .submit_btn:hover {
-    background-color: #9D5143;
+    background-color: #1c8390;
     color: white;
 }
 
@@ -118,7 +117,7 @@ overriden later */
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #F9EACF;
+    background-color: #0c4784;
     overflow: hidden;
     width: 100%;
     top: 0;
@@ -129,7 +128,7 @@ overriden later */
 .topnav a {
     float: left;
     display: flex;
-    color: #d88e0e;
+    color: #f3f5f8;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -145,15 +144,14 @@ overriden later */
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: rgb(245, 167, 151);
-    color: #6b4400;
+    background-color: #f3f5f8;
+    color: #1c8390;
     
 }
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-    background-color: red;
-    color: #6b4400;
+    background-color: #0c4784;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
