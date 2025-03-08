@@ -28,6 +28,24 @@
 
 
 
+#HomeImg {
+    background-image: url('../sources/mystic_logo.png'); /* Replace with your image path */ 
+    background-size: cover; /* Cover the entire header */ 
+    background-position: center; /* Center the image */  
+    
+    min-height:60px;    /* Set a height for the header */ 
+    min-width:60px; 
+
+    font-size: 100%;
+    display: flex; /* Align items */ 
+    justify-content: center; /* Center horizontally */ 
+    align-items: center; /* Center vertically */ 
+    text-align: center; /* Center text */ 
+    overflow: hidden;
+
+}
+
+
 
 
 .headers {
@@ -110,17 +128,19 @@ overriden later */
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
-    display: block;
+    display: flex;
     color: #d88e0e;
     text-align: center;
-    padding: 14px 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
 
     font-family: "Sour Gummy", serif;
     font-weight: 500;
-    min-height:30px;    
-    min-width:30px; 
+    min-height:60px;    
+    min-width:60px; 
 }
 
 /* Change the color of links on hover */
@@ -147,7 +167,10 @@ first one ("Home"). Show the link that contains should open and close the topnav
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
-      display: block;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
     }
 }
 
@@ -163,7 +186,10 @@ clicks on the icon. This class makes the topnav look good on small screens
     }
     .topnav.responsive a {
       float: none;
-      display: block;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
       text-align: left;
     }
 }
