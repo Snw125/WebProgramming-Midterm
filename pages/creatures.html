@@ -13,7 +13,7 @@
             .column {
                 float: left;
                 width: 33.33%;
-                padding: 5.0vmin;
+                padding: 30px;
                 box-sizing: border-box;
             }
 
@@ -26,10 +26,15 @@
             }
 
             /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width: 800px) {
                 .column {
                     width: 100%;
                 }
+            }
+
+            .basicpad {
+                padding-left: 100px; 
+                padding-right: 100px;
             }
         
         </style>
@@ -68,19 +73,19 @@
             <p class='bannertxt'>Creatures</p>
         </div>        
 
-
+        <div class="basicpad">
         <div class="row">
             <div class="column">
-                <img src="" width=100%> </img>
+                <img src="../sources/cat1.png" width=100%> </img>
                 <h2 class="headers">Pet 1</h2>
                 <ul class="headers">
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Likes trash</li>
+                    <li>Likes dark places</li>
+                    <li>Good lap buddy</li>
                   </ul>
             </div>
             <div class="column">
-                <img src="" width=100%> </img>
+                <img src="../sources/cat2.png" width=100%> </img>
                 <h2 class="headers">Pet 2</h2>
                 <ul class="headers">
                     <li></li>
@@ -89,7 +94,7 @@
                 </ul>
             </div>
             <div class="column">
-                <img src="" width=100%> </img>
+                <img src="../sources/cat3.png" width=100%> </img>
                 <h2 class="headers">Pet 3</h2>
                 <ul class="headers">
                     <li></li>
@@ -97,6 +102,7 @@
                     <li></li>
                 </ul>
             </div>
+        </div>
         </div>
 
         
