@@ -1,5 +1,6 @@
 <html>
     <head>
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
         <title>Mystic Managerie Contact Us</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -10,7 +11,7 @@
         
         <link rel="stylesheet" href="../styles/mystic_style.css">   
         <script type = "text/javascript" src="../js/main_page.js"></script>
-
+        
         <script>
             function toggleUrgency() {
                 let button = document.getElementById("urgentButton");
@@ -32,25 +33,38 @@
             function validateForm() {
                 let isValid = true;
                 
-                let name = document.getElementById("name");
+                let firstname = document.getElementById("firstname");
+                let lastname = document.getElementById("lastname");
+                let number = document.getElementById("number");
                 let email = document.getElementById("email");
                 let subject = document.getElementById("subject");
                 let message = document.getElementById("message");
                 let reason = document.getElementById("reason");
                 
                 let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                let numPattern = /^\+?[1-9]\d{0,2}[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
 
                 // Clear previous errors
                 document.querySelectorAll(".error-message").forEach(el => el.style.display = "none");
                 document.querySelectorAll("input, textarea, select").forEach(el => el.classList.remove("invalid"));
 
-                if (name.value.trim() === "") {
-                    showError(name, "Name is required.");
+                if (firstname.value.trim() === "") {
+                    showError(name, "First name is required.");
+                    isValid = false;
+                }
+
+                if (lastname.value.trim() === "") {
+                    showError(name, "Last name is required.");
                     isValid = false;
                 }
 
                 if (email.value.trim() === "" || !emailPattern.test(email.value)) {
                     showError(email, "Valid email is required.");
+                    isValid = false;
+                }
+
+                if (number.value.trim() === "" || !numPattern.test(number.value)) {
+                    showError(number, "Valid number is required.");
                     isValid = false;
                 }
 
@@ -87,19 +101,41 @@
 
                 inputElement.classList.add("invalid"); // Highlight the field in red
             }
-
-
         </script>
         <style>
             body {
                 color: #0c4784;
                 font-family: "Sour Gummy", serif;
             }
+            
+            /* Adjust h2 and h3 spacing */
+            .contact-h2 {
+                margin-top: -80px; 
+                text-align: center; 
+            }
 
-            /* Apply font and color to dropdown */
-            select, select option {
-                font-family: "Sour Gummy", serif;
-                color: #0c4784;
+            .contact-h3 {
+                text-align: center; 
+            }
+
+            /* Style the contact form */
+            #contactForm {
+                margin-top: 2vw;
+            }
+
+            /* Style the contact form input fields */
+            input[type="text"],
+            input[type="email"],
+            textarea,
+            select {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                border: 2px solid #0c3684d5;
+                border-radius: 1px;
+                font-size: 16px;
+                transition: 0.3s;
+                outline: none;
             }
 
             /* Style submit button */
@@ -117,7 +153,8 @@
                 text-align: center;  /* Ensure text inside is centered */
                 width: fit-content;
             }
-
+            
+            /* Hover effect for submit button */
             input[type="submit"]:hover {
                 background-color: #1c8390;
                 color: white;
@@ -140,6 +177,12 @@
             #urgentButton:hover {
                 background-color: #0c4784;
                 color: white;
+            }
+
+            /* Apply font and color to dropdown */
+            select, select option {
+                font-family: "Sour Gummy", serif;
+                color: #0c4784;
             }
 
             /* Style for error messages */
@@ -182,12 +225,20 @@
         
 
         <div style="padding:10px; margin-left: 20%; margin-right: 20%;">
-            <h2 class="headers">We would love to hear from you!</h3>
-            <h3 class="headers">If you have any questions, concerns, or feedback, please fill out the form below and we will get back to you as soon as possible.
+            <h2 class="contact-h2">We would love to hear from you!</h2>
+            <h3 class="contact-h3">If you have any questions, concerns, or feedback, please fill out the form below and we will get back to you as soon as possible.
 
             <form id="contactForm" onsubmit="return validateForm()">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br>
+                <label for="firstname">First Name:</label><br>
+                <input type="text" id="firstname" name="firstname" required><br>
+                <span class="error-message"></span><br>
+
+                <label for="lastname">Last Name:</label><br>
+                <input type="text" id="lastname" name="lastname" required><br>
+                <span class="error-message"></span><br>
+
+                <label for="number">Phone Number:</label><br>
+                <input type="text" id="number" name="number" required><br>
                 <span class="error-message"></span><br>
 
                 <label for="email">Email:</label><br>
@@ -216,6 +267,7 @@
 
                 <!-- Add back the missing submit button -->
                 <input type="submit" value="Submit">
+            </h3>
             </form>
             
             <br>
