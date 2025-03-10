@@ -54,6 +54,66 @@
                 margin: 0 auto;
                 display: block;
             }
+            body {
+                color: #0c4784;
+                font-family: "Sour Gummy", serif;
+            }
+
+            /* Style the contact form input fields */
+            input[type="text"],
+            input[type="email"],
+            textarea,
+            select {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                border: 2px solid #0c3684d5;
+                border-radius: 1px;
+                font-size: 16px;
+                transition: 0.3s;
+                outline: none;
+            }
+
+            /* Style submit button */
+            input[type="submit"]   {
+                color: #1c8390;
+                border: 3px solid #1c8390;
+                background-color: #5ad9b9;
+                padding: 5px 15px;
+                font-size: 20px;
+                font-family: "Sour Gummy", serif;
+                cursor: pointer;
+                border-radius: 5px;
+                display: block;
+                margin: 10px auto;  /* Center it horizontally */
+                text-align: center;  /* Ensure text inside is centered */
+                width: fit-content;
+            }
+            
+            /* Hover effect for submit button */
+            input[type="submit"]:hover {
+                background-color: #1c8390;
+                color: white;
+            }
+
+            /* Apply font and color to dropdown */
+            select, select option {
+                font-family: "Sour Gummy", serif;
+                color: #0c4784;
+            }
+
+            /* Style for error messages */
+            .error-message {
+                color: red;
+                font-size: 14px;
+                margin-top: 5px;
+                display: none; /* Initially hidden */
+            }
+
+            /* Highlight invalid input fields */
+            input.invalid, textarea.invalid, select.invalid {
+                border: 2px solid red;
+            }
         </style>
     </head>
 
@@ -151,14 +211,14 @@
                 <br>
 
                 <label for="exp_question" id="exp_question_label">Please tell us about your previous pet owning experience:</label>
-                <textarea id="exp_question" name="exp_question" maxlength="350" style="height:150px; width:350px;" ></textarea>
+                <textarea id="exp_question" name="exp_question" maxlength="350" style="height:150px; width:250px;" ></textarea>
 
                 <label for="eq_question">Please tell us about personality traits you have that
                     would make you a good pet owner:</label>
-                <textarea id="eq_question" name="eq_question" maxlength="350" style="height:150px; width:350px;" required></textarea>
+                <textarea id="eq_question" name="eq_question" maxlength="350" style="height:150px; width:250px;" required></textarea>
 
                 <label for="why_question">Please tell us why you want to adopt from Mystic Menagerie:</label>
-                <textarea id="why_question" name="why_question" maxlength="350" style="height:150px; width:350px;" required></textarea>
+                <textarea id="why_question" name="why_question" maxlength="350" style="height:150px; width:250px;" required></textarea>
                 <br>
 
                 <button type="submit" class="submit_btn">
