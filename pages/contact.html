@@ -17,13 +17,13 @@
                 let hiddenInput = document.getElementById("urgentRequest");
 
                 if (hiddenInput.value === "false") {
-                    button.style.backgroundColor = "#c0392b";
-                    button.style.color = "white";
+                    button.style.backgroundColor = "#c0392b";  // Red background
+                    button.style.color = "white";  // White text
                     button.innerText = "Urgent Request Marked";
                     hiddenInput.value = "true";
                 } else {
-                    button.style.backgroundColor = "";
-                    button.style.color = "";
+                    button.style.backgroundColor = "white";  // Reset to default white
+                    button.style.color = "#0c4784";  // Reset text color
                     button.innerText = "Click if this is an urgent request";
                     hiddenInput.value = "false";
                 }
@@ -73,11 +73,21 @@
             }
 
             function showError(inputElement, message) {
-                let errorSpan = inputElement.nextElementSibling; // Get the next sibling span
-                errorSpan.innerText = message;
-                errorSpan.style.display = "block";
+                let errorSpan = inputElement.nextElementSibling;
+                
+                // Ensure we are selecting the correct error span
+                while (errorSpan && !errorSpan.classList.contains("error-message")) {
+                    errorSpan = errorSpan.nextElementSibling;
+                }
+
+                if (errorSpan) {
+                    errorSpan.innerText = message;
+                    errorSpan.style.display = "block";
+                }
+
                 inputElement.classList.add("invalid"); // Highlight the field in red
             }
+
 
         </script>
         <style>
@@ -93,24 +103,24 @@
             }
 
             /* Style submit button */
-            input[type="submit"] {
+            input[type="submit"]   {
+                color: #1c8390;
+                border: 3px solid #1c8390;
+                background-color: #5ad9b9;
+                padding: 5px 15px;
+                font-size: 20px;
                 font-family: "Sour Gummy", serif;
-                color: #fff;  /* White text */
-                background-color: #0c4784; /* Button background */
-                border: none;
-                padding: 10px 20px;
-                font-size: 16px;
                 cursor: pointer;
                 border-radius: 5px;
                 display: block;
                 margin: 10px auto;  /* Center it horizontally */
                 text-align: center;  /* Ensure text inside is centered */
-                width: fit-content;  /* Prevent it from stretching */
+                width: fit-content;
             }
 
-            /* Add hover effect for submit button */
             input[type="submit"]:hover {
-                background-color: #083b68; /* Darker blue on hover */
+                background-color: #1c8390;
+                color: white;
             }
 
             /* Style urgent request button */
@@ -118,7 +128,6 @@
                 font-family: "Sour Gummy", serif;
                 color: #0c4784;
                 background-color: white;
-                border: 2px solid #0c4784;
                 padding: 10px 20px;
                 font-size: 16px;
                 cursor: pointer;
@@ -170,9 +179,11 @@
             <h1 class='bannertxt'>Contact Us</h1>
         </div>  
 
+        
+
         <div style="padding:10px; margin-left: 20%; margin-right: 20%;">
-            <h2 class="headers">We’d love to hear from you!</h3>
-            <h3 class="headers">If you have any questions, concerns, or feedback, please fill out the form below and we’ll get back to you as soon as possible.
+            <h2 class="headers">We would love to hear from you!</h3>
+            <h3 class="headers">If you have any questions, concerns, or feedback, please fill out the form below and we will get back to you as soon as possible.
 
             <form id="contactForm" onsubmit="return validateForm()">
                 <label for="name">Name:</label><br>
@@ -199,6 +210,12 @@
                     <option value="adoption">Adoption Inquiry</option>
                 </select><br>
                 <span class="error-message"></span><br>
+
+                <button type="button" id="urgentButton" onclick="toggleUrgency()">Click if this is an urgent request</button>
+                <input type="hidden" id="urgentRequest" name="urgentRequest" value="false">
+
+                <!-- Add back the missing submit button -->
+                <input type="submit" value="Submit">
             </form>
             
             <br>
