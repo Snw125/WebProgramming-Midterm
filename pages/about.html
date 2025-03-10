@@ -12,6 +12,7 @@
         <script type = "text/javascript" src="../js/main_page.js"></script>
 
         <style>
+
             ul.headers {
                 list-style-type: disc;       
                 padding-left: 20px;          
@@ -25,6 +26,26 @@
             ul.headers li {
                 text-align: left;           
                 display: list-item;          
+            }
+
+            img {
+                width: 8%; 
+                margin: 0 5px;  
+            }
+
+            .img-row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            @media screen and (max-width: 900px) {
+                ul.headers {
+                    align-items: flex-start; /
+                }
+                img {
+                    width: 15%;
+                }
             }
         </style>
 
@@ -61,6 +82,11 @@
         </ul>
 
         <br>
+        <div class="img-row">
+            <img src="../sources/cat2.png">
+            
+        </div>
+        <br>
 
         <h2 class="headers">Our Story</h2>
         <p class="headers">Mystic Menagerie was founded in 1999 by renowned veterinarian 
@@ -72,6 +98,10 @@
         silly little guys.</p>
 
         <br>
+        <div class="img-row">
+            <img src="../sources/cat3.png">
+        </div>
+        <br>
 
         <h2 class="headers">Our Impact</h2>
         <ul class="headers">
@@ -81,6 +111,7 @@
             <li><strong>95%</strong> of customers rate us 5 stars on Yelp!</li>
         </ul>
         <p class="headers"></p>
+        <br>        
 
     </body>
 </html>
