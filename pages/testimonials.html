@@ -15,7 +15,10 @@
                 const testimonials = [
                     { name: "Luna Starfall", message: "Adopting a mystic creature changed my life! The process was seamless and the care tips were so helpful." },
                     { name: "Eldrin Moonshadow", message: "The Mystic Managerie has the most unique creatures. Highly recommended!" },
-                    { name: "Seraphina Nightbloom", message: "Such a magical experience! The staff was kind and guided me through everything." }
+                    { name: "Seraphina Nightbloom", message: "Such a magical experience! The staff was kind and guided me through everything." }, 
+                    { name: "Orion Duskrider", message: "I never thought I'd bond with a mythical creature so deeply. This place is truly enchanting!" },
+                    { name: "Elias Stormweaver", message: "From start to finish, the adoption process was magical. My new companion is incredible!" },
+                    { name: "Aurora Frostwhisper", message: "A dream come true! The creatures are well cared for, and the team is full of wisdom." }
                 ];
                 
                 const testimonialsContainer = document.getElementById("testimonialsContainer");
@@ -29,25 +32,96 @@
         </script>
 
         <style>
+            /* General Styling */
             body {
                 font-family: "Sour Gummy", serif;
                 color: #0c4784;
-                background-color: #d0faf3;
+                background: linear-gradient(to bottom, #d0faf3, #a3e0da);
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
+
+            /* Testimonial Section */
             .testimonial {
                 background: white;
-                padding: 15px;
-                margin: 10px auto;
-                border-radius: 8px;
-                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin: 15px auto;
+                border-radius: 12px;
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
                 max-width: 600px;
                 text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border-left: 5px solid #0c4784;
             }
+
+            .testimonials-header {
+                text-align: center;
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+
+            .testimonials-header h2 {
+                font-size: 2.5rem;
+                color: #0c4784;
+                font-weight: bold;
+            }
+
+            .testimonials-header h3 {
+                font-size: 1.5rem;
+                color: #0c4784;
+                font-style: italic;
+            }
+
+
+            /* Subtle Hover Effect */
+            .testimonial:hover {
+                transform: scale(1.03);
+                box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Testimonial Text */
+            .testimonial p {
+                font-size: 18px;
+                line-height: 1.6;
+                color: #333;
+            }
+
+            /* Name Styling */
+            .testimonial .name {
+                font-weight: bold;
+                font-size: 20px;
+                color: #0c4784;
+                margin-top: 10px;
+            }
+
+            /* Decorative Divider */
+            .testimonial::after {
+                content: "❈ ❖ ❈";
+                display: block;
+                font-size: 16px;
+                color: #72c2b4;
+                margin-top: 10px;
+            }
+
+            /* Responsive Adjustments */
             @media (max-width: 768px) {
                 .testimonial {
                     max-width: 90%;
+                    padding: 15px;
+                }
+                
+                .testimonial p {
+                    font-size: 16px;
+                }
+                
+                .testimonial .name {
+                    font-size: 18px;
                 }
             }
+
         </style>
 
     </head>
@@ -72,6 +146,12 @@
         <div id="bannerimage" style="height:50%;">
             <h1 class='bannertxt'>Testimonials</h1>
         </div>  
+
+        <!-- Testimonials Heading -->
+        <div class="testimonials-header">
+            <h2>What Our Visitors Say</h2>
+            <h3>Real experiences from those who have adopted mystical companions</h3>
+        </div>
 
         <div id="testimonialsContainer" style="padding: 20px; text-align: center;"></div>
     </body>
