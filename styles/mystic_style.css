@@ -1,5 +1,5 @@
 #bannerimage {
-    margin-top: 60px;
+    
     background-image: url("../images/banner\ 1.png");
     background-size: cover; /* Cover the entire header */ 
     background-position: center; /* Center the image */ 
@@ -10,6 +10,10 @@
     align-items: center; /* Center vertically */ 
     text-align: center; /* Center text */ 
     overflow: hidden;
+}
+
+.bannerImage {
+    margin-top: 60px;
 }
 
 .bannertxt{
@@ -200,6 +204,9 @@ clicks on the icon. This class makes the topnav look good on small screens
       justify-content: center;
       align-items: center;
       text-align: left;
+    }
+    .bannerImage.responsive {
+        margin-top: 0px;
     }
 }
 
