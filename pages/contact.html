@@ -10,8 +10,145 @@
         
         <link rel="stylesheet" href="../styles/mystic_style.css">   
         <script type = "text/javascript" src="../js/main_page.js"></script>
+
+        <script>
+            function toggleUrgency() {
+                let button = document.getElementById("urgentButton");
+                let hiddenInput = document.getElementById("urgentRequest");
+
+                if (hiddenInput.value === "false") {
+                    button.style.backgroundColor = "#c0392b";
+                    button.style.color = "white";
+                    button.innerText = "Urgent Request Marked";
+                    hiddenInput.value = "true";
+                } else {
+                    button.style.backgroundColor = "";
+                    button.style.color = "";
+                    button.innerText = "Click if this is an urgent request";
+                    hiddenInput.value = "false";
+                }
+            }
+
+            function validateForm() {
+                let isValid = true;
+                
+                let name = document.getElementById("name");
+                let email = document.getElementById("email");
+                let subject = document.getElementById("subject");
+                let message = document.getElementById("message");
+                let reason = document.getElementById("reason");
+                
+                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                // Clear previous errors
+                document.querySelectorAll(".error-message").forEach(el => el.style.display = "none");
+                document.querySelectorAll("input, textarea, select").forEach(el => el.classList.remove("invalid"));
+
+                if (name.value.trim() === "") {
+                    showError(name, "Name is required.");
+                    isValid = false;
+                }
+
+                if (email.value.trim() === "" || !emailPattern.test(email.value)) {
+                    showError(email, "Valid email is required.");
+                    isValid = false;
+                }
+
+                if (subject.value.trim() === "") {
+                    showError(subject, "Subject is required.");
+                    isValid = false;
+                }
+
+                if (message.value.trim() === "") {
+                    showError(message, "Message is required.");
+                    isValid = false;
+                }
+
+                if (reason.value === "") {
+                    showError(reason, "Please select a reason for inquiry.");
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+
+            function showError(inputElement, message) {
+                let errorSpan = inputElement.nextElementSibling; // Get the next sibling span
+                errorSpan.innerText = message;
+                errorSpan.style.display = "block";
+                inputElement.classList.add("invalid"); // Highlight the field in red
+            }
+
+        </script>
+        <style>
+            body {
+                color: #0c4784;
+                font-family: "Sour Gummy", serif;
+            }
+
+            /* Apply font and color to dropdown */
+            select, select option {
+                font-family: "Sour Gummy", serif;
+                color: #0c4784;
+            }
+
+            /* Style submit button */
+            input[type="submit"] {
+                font-family: "Sour Gummy", serif;
+                color: #fff;  /* White text */
+                background-color: #0c4784; /* Button background */
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 5px;
+                display: block;
+                margin: 10px auto;  /* Center it horizontally */
+                text-align: center;  /* Ensure text inside is centered */
+                width: fit-content;  /* Prevent it from stretching */
+            }
+
+            /* Add hover effect for submit button */
+            input[type="submit"]:hover {
+                background-color: #083b68; /* Darker blue on hover */
+            }
+
+            /* Style urgent request button */
+            #urgentButton {
+                font-family: "Sour Gummy", serif;
+                color: #0c4784;
+                background-color: white;
+                border: 2px solid #0c4784;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            /* Hover effect for urgent button */
+            #urgentButton:hover {
+                background-color: #0c4784;
+                color: white;
+            }
+
+            /* Style for error messages */
+            .error-message {
+                color: red;
+                font-size: 14px;
+                margin-top: 5px;
+                display: none; /* Initially hidden */
+            }
+
+            /* Highlight invalid input fields */
+            input.invalid, textarea.invalid, select.invalid {
+                border: 2px solid red;
+            }
+
+        </style>
     </head>
-    <body style="background-color: #d0faf3;">
+    <body style="background-color: #d0faf3; " >
         <div class="topnav" id="myTopnav">
             <a href="../index.html" class="active">
                 <div id="HomeImg"></div>
@@ -34,16 +171,43 @@
         </div>  
 
         <div style="padding:10px; margin-left: 20%; margin-right: 20%;">
-            <h2 class="headers">Application Inquiries</h2>
+            <h2 class="headers">We’d love to hear from you!</h3>
+            <h3 class="headers">If you have any questions, concerns, or feedback, please fill out the form below and we’ll get back to you as soon as possible.
 
+            <form id="contactForm" onsubmit="return validateForm()">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <span class="error-message"></span><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <span class="error-message"></span><br>
+
+                <label for="subject">Subject:</label><br>
+                <input type="text" id="subject" name="subject" required><br>
+                <span class="error-message"></span><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <span class="error-message"></span><br>
+
+                <label for="reason">Reason for Inquiry:</label><br>
+                <select id="reason" name="reason" required>
+                    <option value="">Select a reason</option>
+                    <option value="general">General Question</option>
+                    <option value="support">Support Request</option>
+                    <option value="adoption">Adoption Inquiry</option>
+                </select><br>
+                <span class="error-message"></span><br>
+            </form>
+            
+            <br>
+            <h2 class="headers">Further Inquiries</h2>
             <p class="headers">Please reach out to someone
             <a href="mailto:someone@mysticmanagerie.org" class="main_link">someone@mysticmanagerie.org</a></p> 
-            
             <br>
+            
 
-            <h2 class="headers">Inquiries</h2>
-            
-            <br>
         </div>
 
 
