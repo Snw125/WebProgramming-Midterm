@@ -132,6 +132,7 @@ overriden later */
 
 /* Add a black background color to the top navigation */
 .topnav {
+    z-index: 100;
     background-color: #0c4784;
     overflow: hidden;
     width: 100%;
