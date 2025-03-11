@@ -17,14 +17,14 @@
 }
 
 .bannertxt{
-    color: #0c4784; /* Text color */ 
+    color: white; /* Text color */ 
+    text-shadow: #000 0px 0px 5px;
+    -webkit-font-smoothing: antialiased;
     font-family: "Sour Gummy", serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
     font-size: 6vmax;
-    
-
     padding-right: 5%;
     padding-left: 5%;
 }
