@@ -11,6 +11,45 @@
         
         <link rel="stylesheet" href="../styles/mystic_style.css">   
         <script type = "text/javascript" src="../js/main_page.js"></script>
+        <style>
+            .Question{
+                display:block;
+                text-align: center;
+                color: #0c4784;
+                font-family: "Sour Gummy", serif;
+                font-size:x-large;
+                font-weight:bold;
+                padding-top: 10px;
+            }
+            .Answer{
+                display:block;
+                font-size:medium;
+                color: #0c4784;
+                font-family: "Sour Gummy", serif;
+                text-align: center;
+            }
+        </style>     
+        <script>    
+            function display_line(text, style) {
+                var result = document.getElementById("faq");
+                var newDiv = document.createElement('div');
+                newDiv.classList.add(style);
+                newDiv.innerHTML = text;
+                result.appendChild(newDiv);                
+            }
+            function display_faq(faq) {
+                document.getElementById("faq").innerHTML = "";
+                for (let i=0; i < faq.length; i++) {
+                    display_line(faq[i].Question, "Question");
+                    display_line(faq[i].Answer, "Answer");
+                }
+            }
+            async function load_faq() {
+                const response = await fetch("../sources/faq.json");
+                const faq = await response.json();
+                display_faq(faq.FAQ);
+            }
+        </script>   
     </head>
     <body style="background-color: #d0faf3;">
         <div class="headerdesign">
@@ -37,10 +76,12 @@
         <div id="bannerimage" class="bannerImage" style="height:50%;">
             <h1 class='bannertxt'>FAQ</h1>
         </div>  
+        <div id="faq">
 
-
+        </div>
+        <script>load_faq()</script>
         
-
+        <br>
 
     </body>
 </html>

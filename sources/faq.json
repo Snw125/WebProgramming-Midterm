@@ -1,0 +1,29 @@
+{
+    "FAQ": [
+        {
+            "Question": "Can you mail creatures?",
+            "Answer": "Although more sturdy than your average pet, they are still pups so you must pick them up in person."
+        },
+        {
+            "Question":"Can I resell?",
+            "Answer":"No. If a creature doesn't match with your vibes, you can return them to us."
+        },
+        {
+            "Question":"How long does it take for you to pack and ship?",
+            "Answer":"For regular items, I pack them right away, and shipping is done within 1-2 days. Shirts, hoodies and mugs take longer due to needing to drop-ship them."
+        },
+        {
+            "Question":"Can I adopt if I live abroad?",
+            "Answer":"Yes! As long as you can make it to HQ, you can adopt!"
+        },
+        {
+            "Question":"Can I adopt multiple?",
+            "Answer":"Yes of course!"
+        },              
+        {
+            "Question":"I want a creature but they aren't adoptable, will another come back?",
+            "Answer":"Our website constantly updates its creatures, stay tuned for when your favorite species comes back!"
+        }
+                   
+    ]
+}
